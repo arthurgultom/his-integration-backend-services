@@ -33,7 +33,6 @@ for row in cursor:
 	
 testArr = range(y)
 
-
 print(y)
 
 cursor.execute("SELECT T01.VIN#I7,T03.ITEMJ1,T01.MODLI7,T01.DLR#I7,T01.VIN#I7,T01.ENG#I7,T01.COLRI7,T01.DODDI7,T01.DOMMI7,T01.DOYYI7,T01.REF2I7,T01.REFPI7,T01.REF#I7,T02.NAMEA0,T05.FROMJF,T05.TOJF,T05.MVYYJF, T05.MVMMJF,T05.MVDDJF,T01.ETAYI7,T01.ETAMI7,T01.ETADI7,T01.INVPI7,T01.INV#I7 FROM HMI17P001.INFL0700 T01 LEFT JOIN HMI17P001.ARFL0000 T02 ON T01.DLR#I7=T02.CUSTA0  LEFT JOIN HMI17P001.INFL3700 T03 ON T01.VIN#I7=T03.VIN#J1  LEFT JOIN IDS2101D.ZZFL3400 T04 ON T01.VIN#I7= T04.VIN#34 LEFT JOIN HMI17P001.INFL5200 T05 ON T01.VIN#I7=T05.VIN#JF WHERE T01.COMPI7 ='001' AND (T05.FROMJF= '1' AND T05.TOJF ='5') AND T01.DOYYI7 ="+str(YY)+" AND T01.DOMMI7 ="+str(MM)+"")
@@ -71,16 +70,12 @@ for row in cursor:
 	#testArr[x][24] = row[24]
 	#testArr[x][25] = row[25]
 	
-	
 	x=x+1
-	
-	
+		
 cursor.close()
 conn.close()
+
 #------------------------------------------insert to postgres------------------------------------------
-
-
-	
 
 import mysql.connector
 from mysql.connector import errorcode
@@ -127,9 +122,6 @@ for z in range(0,y):
 	#dataItem25 = ''.join(e for e in str(testArr[z][24]).replace("'", " ") if e in okchars)
 	#dataItem26 = ''.join(e for e in str(testArr[z][25]).replace("'", " ") if e in okchars)
 	
-	
-	
-	
 	try:
 		dodate = str(dataItem10) + "-" + str(dataItem9) + "-" + str(dataItem8)
 		mvndate = str(dataItem17) + "-" + str(dataItem18) + "-" + str(dataItem19)
@@ -141,7 +133,6 @@ for z in range(0,y):
 		
 		args = ['','',dataItem1, dataItem2, dataItem3,dataItem4, chasis, dataItem6, dataItem7,dodate, '',dataItem11,omnumber,dataItem14,'','','','','','','',dataItem15,dataItem16,mvndate,etadate,invoiceno]
 		#args = ['','',dataItem1, dataItem2, dataItem3,dataItem4, chasis, dataItem6, dataItem7,dodate, '',dataItem11,omnumber,dataItem14,'','','','','','','',dataItem15,dataItem16,mvndate,etadate,invoiceno,invoicedate]
-
 	
 		result_args = cur.callproc('UPDATE_DEALER_STOCK_STATUS_1_5', args);
 
