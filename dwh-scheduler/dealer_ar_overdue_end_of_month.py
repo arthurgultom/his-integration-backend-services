@@ -109,3 +109,20 @@ for z in range(0,y):
 		print("Error on execute SYNC_DEALER_AR_OVERDUE_END_OF_MONTH procedure.")
 		break;
 
+try:
+   conn3  = mysql.connector.connect(host='10.17.51.35',user='mysqlwb',password='mysqlwb',database='hino_bi_db')
+except:
+    print ("I am unable to connect to the database hino_bi_db.")
+	
+cur3 = conn3.cursor()
+
+query = """
+    delete from bi_lastupdate where bi_report = 'dealer_ar_overdue_end_of_month';
+	insert into bi_lastupdate select 'dealer_ar_overdue_end_of_month' as bi_report, now() as last_update;
+"""
+
+for result in cur3.execute(query, multi=True):
+    if result.with_rows:
+        print(result.fetchall())
+
+conn3.commit()

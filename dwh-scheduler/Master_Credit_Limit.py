@@ -111,3 +111,20 @@ for z in range(0,y):
 		print("Error on execute SYNC_CREDIT_LIMIT procedure.")
 		break;
 
+try:
+   conn3  = mysql.connector.connect(host='10.17.51.35',user='mysqlwb',password='mysqlwb',database='hino_bi_db')
+except:
+    print ("I am unable to connect to the database hino_bi_db.")
+	
+cur3 = conn3.cursor()
+
+query = """
+    delete from bi_lastupdate where bi_report = 'master_credit_limit';
+	insert into bi_lastupdate select 'master_credit_limit' as bi_report, now() as last_update;
+"""
+
+for result in cur3.execute(query, multi=True):
+    if result.with_rows:
+        print(result.fetchall())
+
+conn3.commit()
