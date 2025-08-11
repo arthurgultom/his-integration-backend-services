@@ -1,0 +1,114 @@
+import pyodbc
+import datetime
+import time
+import calendar
+conn = pyodbc.connect('DSN=MDS17PRODDSN;UID=crm;PWD=password')
+cursor = conn.cursor()
+y=0;
+today = datetime.date.today()
+one_day = datetime.timedelta(days=1)
+yesterday = today - one_day
+dodate = str(yesterday)
+YY = str(today.year)
+MM = str(dodate[5:	7])
+DD = str(dodate[8:	10])
+
+YY1 = str(today.year)
+MM1 = str(today.month)
+DD1 = str(yesterday.day)
+
+todaydate = str(today.year) +  str(today.month) + str(today.day)
+
+print('Year:', YY1)
+print('Mon :', MM1)
+print('Day :', DD1)
+cursor.execute("SELECT  count(*)as total FROM HMI17P001.ARFP00 T01 LEFT JOIN HMI17P001.ARFP01 T02 ON T01.CUSTA0=T02.CUSTA1 WHERE T01.CSTSA0='A'")
+
+for row in cursor:
+	y=row[0]
+	
+testArr = range(y)
+
+
+print(y)
+
+cursor.execute("SELECT T01.CUSTA0,T01.LSDDA0,T01.LSMMA0,T01.LSYYA0,T02.TCDEA1,T01.CLIMA0,T01.BALOA0,T02.TLIMA1 ,T02.PRDCA1 FROM HMI17P001.ARFP00 T01 LEFT JOIN HMI17P001.ARFP01 T02 ON T01.CUSTA0=T02.CUSTA1 WHERE  T01.CSTSA0='A'")
+
+x=0
+for row in cursor:
+#print row;
+	testArr[x] = range(9)
+	testArr[x][0] = row[0]
+	testArr[x][1] = row[1]
+	testArr[x][2] = row[2]
+	testArr[x][3] = row[3]
+	testArr[x][4] = row[4]
+	testArr[x][5] = row[5]
+	testArr[x][6] = row[6]
+	testArr[x][7] = row[7]
+	testArr[x][8] = row[8]    
+	
+	
+	
+	x=x+1
+	
+	
+cursor.close()
+conn.close()
+#------------------------------------------insert to postgres------------------------------------------
+
+
+	
+
+import mysql.connector
+from mysql.connector import errorcode
+from difflib import SequenceMatcher
+import sys
+
+try:
+	#conn2 	= mysql.connector.connect(host='localhost',user='root',password='',database='vos_incentive')
+	conn2 	= mysql.connector.connect(host='10.17.51.35',user='mysqlwb',password='mysqlwb',database='hino_bi_db')
+except:
+	print("error connection 10.17.51.35 hino bi db.")
+	
+cur = conn2.cursor()
+cur.execute("delete from eom_mst_credit_limit_3s");
+conn2.commit()
+
+okchars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_-+=\/,.<> '
+
+for z in range(0,y):
+	#dataItem1 = testArr[z][0].strip();
+	dataItem1 = ''.join(e for e in str(testArr[z][0]).replace("'", " ") if e in okchars)
+	#dataItem2 = testArr[z][1].replace("'", " ").isalnum;
+	dataItem2 = ''.join(e for e in str(testArr[z][1]).replace("'", " ") if e in okchars)
+	dataItem3 = ''.join(e for e in str(testArr[z][2]).replace("'", " ") if e in okchars)
+	dataItem4 = ''.join(e for e in str(testArr[z][3]).replace("'", " ") if e in okchars)
+	dataItem5 = ''.join(e for e in str(testArr[z][4]).replace("'", " ") if e in okchars)
+	dataItem6 = ''.join(e for e in str(testArr[z][5]).replace("'", " ") if e in okchars)
+	dataItem7 = ''.join(e for e in str(testArr[z][6]).replace("'", " ") if e in okchars)
+	dataItem8 = ''.join(e for e in str(testArr[z][7]).replace("'", " ") if e in okchars)
+	dataItem9 = ''.join(e for e in str(testArr[z][8]).replace("'", " ") if e in okchars)	
+	try:
+	
+		args = ['',dataItem1, dataItem2, dataItem3,dataItem4, dataItem5,'', dataItem6,dataItem7, dataItem8, dataItem9,'','','','']
+
+	
+		result_args = cur.callproc('SYNC_CREDIT_LIMIT_3S', args);
+
+		conn2.commit()
+		#print "sukses"
+	except:
+		print(dataItem1) 
+		print(dataItem2)
+		print(dataItem3)
+		print(dataItem4)
+		print(dataItem5)
+		print(dataItem6)
+		print(dataItem7)
+		print(dataItem8)
+
+		print(args)
+		print("Error on execute SYNC_CREDIT_LIMIT_3S procedure.")
+		break;
+
