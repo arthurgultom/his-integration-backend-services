@@ -10,9 +10,8 @@ print("[STEP 1] Starting warranty claim detail processing...")
 print(f"[STEP 1] Process started at: {datetime.datetime.now()}")
 
 print("[STEP 2] Establishing database connections...")
-# conn = pyodbc.connect('DSN=ISERIESDSN;UID=crm;PWD=password')
 try:
-    conn = pyodbc.connect('DRIVER={IBM i Access ODBC Driver};SYSTEM=10.17.51.22;DATABASE=HMI17U001;UID=hisuser;PWD=hisuser')
+    conn = pyodbc.connect('DRIVER={IBM i Access ODBC Driver};SYSTEM=10.17.51.22;DATABASE=HMI17P001;UID=crm;PWD=password')
     print("[STEP 2] ✓ Successfully connected to IBM iSeries database")
 except Exception as e:
     print(f"[STEP 2] ✗ Failed to connect to IBM iSeries database: {e}")
@@ -29,13 +28,25 @@ yeard = time.strftime("%Y")
 today = datetime.date.today()
 one_day = datetime.timedelta(days=1)
 yesterday = today - one_day
-YY = str(today.year)
-MM = str(today.month)
+
+# Calculate previous month with proper year rollover handling
+if today.month == 1:
+    # If current month is January, previous month is December of previous year
+    prev_month = 12
+    prev_year = today.year - 1
+else:
+    # Otherwise, just subtract 1 from current month
+    prev_month = today.month - 1
+    prev_year = today.year
+
+YY = str(prev_year)
+MM = str(prev_month).zfill(2)  # Ensure 2-digit format (01, 02, etc.)
 DD = str(today.day)
-BLN = datetime.date.today().strftime('%m')
+BLN = str(prev_month).zfill(2)
 
 print(f"[STEP 3] Date parameters set - Year: {YY}, Month: {MM}, Day: {DD}")
-print(f"[STEP 3] Processing data for period: {MM}/{YY}")
+print(f"[STEP 3] Processing data for PREVIOUS MONTH period: {MM}/{YY}")
+print(f"[STEP 3] Current date: {today.strftime('%m/%Y')}, Processing: {MM}/{YY}")
 
 print("[STEP 4] Executing warranty claim query...")
 print(f"[STEP 4] Query parameters - Year: {YY}, Month: {MM}")
@@ -78,11 +89,11 @@ try:
         T03.WRMMI7,
         T03.WRYYI7,'WR-'|| SUBSTRING(T01.DLR#W0, 2, 3)|| digits(T01.PPMMW0)||SUBSTRING(T01.PPYYW0,3,2) AS WR_DOC_NO,
         T01.CRD#W0
-        FROM HMI17U001.WAFP00 T01 
-        LEFT JOIN HMI17U001.ARFP00 T02 
+        FROM HMI17P001.WAFP00 T01 
+        LEFT JOIN HMI17P001.ARFP00 T02 
         ON T01.DLR#W0 = T02.CUSTA0 AND T01.COMPW0 = T02.COMPA0 
-        LEFT JOIN HMI17U001.INFP07 T03 ON T01.COMPW0 = T03.COMPI7
-        AND T01.VIN#W0 = T03.VIN#I7 LEFT JOIN HMI17U001.INFP25 T04 ON T03.COMPI7 = T04.COMPIP
+        LEFT JOIN HMI17P001.INFP07 T03 ON T01.COMPW0 = T03.COMPI7
+        AND T01.VIN#W0 = T03.VIN#I7 LEFT JOIN HMI17P001.INFP25 T04 ON T03.COMPI7 = T04.COMPIP
         AND T03.MODLI7 = T04.MODLIP WHERE
         COMPW0 = '001' 
         
@@ -129,8 +140,8 @@ print("[STEP 7] ✓ IBM iSeries database connection closed")
 
 print("[STEP 8] Establishing MySQL database connection...")
 try:
-    conn2 = pymysql.connect(host='34.128.71.69',user='root',password='EuXbrmzvVBjDSB99', database='hino_bi_db_dev')
-    print("[STEP 8] ✓ Successfully connected to MySQL database (hino_bi_db_dev)")
+    conn2 = pymysql.connect(host='10.17.111.18',user='mysqlwb',password='mysqlwb',database='his_db_final_3')
+    print("[STEP 8] ✓ Successfully connected to MySQL database (his_db_final_3)")
 except Exception as e:
     print(f"[STEP 8] ✗ Failed to connect to MySQL database: {e}")
     sys.exit(1)
@@ -187,4 +198,5 @@ print("[STEP 12] ✓ MySQL database connection closed")
 
 print(f"[FINAL] Warranty claim detail processing completed at: {datetime.datetime.now()}")
 print(f"[FINAL] Process summary: {successful_inserts} successful, {failed_inserts} failed out of {y} total records")
+
 

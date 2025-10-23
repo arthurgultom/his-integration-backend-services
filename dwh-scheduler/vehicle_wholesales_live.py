@@ -2,7 +2,8 @@ import pyodbc
 import datetime
 import time
 import calendar
-conn = pyodbc.connect('DSN=MDS17PRODDSN;UID=CRM;PWD=PASSWORD')
+
+conn = pyodbc.connect('DRIVER={IBM i Access ODBC Driver};SYSTEM=10.17.51.22;DATABASE=HMI17P001;UID=crm;PWD=password')
 cursor = conn.cursor()
 y=0;
 today = datetime.date.today()
@@ -77,13 +78,12 @@ conn.close()
 
 #------------------------------------------insert to postgres------------------------------------------
 
-import mysql.connector
-from mysql.connector import errorcode
+import pymysql
 from difflib import SequenceMatcher
 import sys
 
 try:
-	conn2 	= mysql.connector.connect(host='10.17.51.35',user='mysqlwb',password='mysqlwb',database='hino_bi_db')
+	conn2 	= pymysql.connect(host='10.17.51.35',user='mysqlwb',password='mysqlwb',database='hino_bi_db')
 except:
 	print("I am unable to connect to the database hino_bi_db.")
 	
