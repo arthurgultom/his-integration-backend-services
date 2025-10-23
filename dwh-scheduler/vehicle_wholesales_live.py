@@ -40,52 +40,57 @@ cursor.execute("SELECT T01.VIN#I7,T03.ITEMJ1,T01.MODLI7,T01.DLR#I7,T01.VIN#I7,T0
 
 # AND T01.DOYYI7 ="+str(YY)+" AND T01.DOMMI7 ="+str(MM)+" 
 #OR (T05.FROMJF= '5' AND T05.TOJF ='1') OR (T05.FROMJF= '8' AND T05.TOJF ='1') 
-x=0
+testArr = []
+x = 0
 for row in cursor:
-#print row;
-	testArr[x] = range(24)
-	testArr[x][0] = row[0]
-	testArr[x][1] = row[1]
-	testArr[x][2] = row[2]
-	testArr[x][3] = row[3]
-	testArr[x][4] = row[4]
-	testArr[x][5] = row[5]
-	testArr[x][6] = row[6]
-	testArr[x][7] = row[7]
-	testArr[x][8] = row[8]
-	testArr[x][9] = row[9]
-	testArr[x][10] = row[10]
-	testArr[x][11] = row[11]
-	testArr[x][12] = row[12]
-	testArr[x][13] = row[13]
-	testArr[x][14] = row[14]
-	testArr[x][15] = row[15]
-	testArr[x][16] = row[16]
-	testArr[x][17] = row[17]
-	testArr[x][18] = row[18]
-	testArr[x][19] = row[19]
-	testArr[x][20] = row[20]
-	testArr[x][21] = row[21]
-	testArr[x][22] = row[22]
-	testArr[x][23] = row[23]
-	#testArr[x][24] = row[24]
-	#testArr[x][25] = row[25]
-	
-	x=x+1
-		
-cursor.close()
+    #print row;
+    testArr.append([None] * 24)  # Initialize a new list with 24 None values
+    testArr[x][0] = row[0]
+    testArr[x][1] = row[1]
+    testArr[x][2] = row[2]
+    testArr[x][3] = row[3]
+    testArr[x][4] = row[4]
+    testArr[x][5] = row[5]
+    testArr[x][6] = row[6]
+    testArr[x][7] = row[7]
+    testArr[x][8] = row[8]
+    testArr[x][9] = row[9]
+    testArr[x][10] = row[10]
+    testArr[x][11] = row[11]
+    testArr[x][12] = row[12]
+    testArr[x][13] = row[13]
+    testArr[x][14] = row[14]
+    testArr[x][15] = row[15]
+    testArr[x][16] = row[16]
+    testArr[x][17] = row[17]
+    testArr[x][18] = row[18]
+    testArr[x][19] = row[19]
+    testArr[x][20] = row[20]
+    testArr[x][21] = row[21]
+    testArr[x][22] = row[22]
+    testArr[x][23] = row[23]
+    #testArr[x][24] = row[24]
+    #testArr[x][25] = row[25]
+    
+    x = x + 1
 conn.close()
 
 #------------------------------------------insert to postgres------------------------------------------
 
 import pymysql
-from difflib import SequenceMatcher
 import sys
 
 try:
-	conn2 	= pymysql.connect(host='10.17.51.35',user='mysqlwb',password='mysqlwb',database='hino_bi_db')
-except:
-	print("I am unable to connect to the database hino_bi_db.")
+    conn2 = pymysql.connect(
+        host='10.17.51.35',
+        user='mysqlwb',
+        password='mysqlwb',
+        database='hino_bi_db',
+        connect_timeout=10  # Add timeout to prevent hanging
+    )
+except pymysql.Error as e:
+    print(f"Error connecting to MySQL database: {e}")
+    sys.exit(1)  # Exit with error code 1 if connection fails
 	
 cur = conn2.cursor()
 

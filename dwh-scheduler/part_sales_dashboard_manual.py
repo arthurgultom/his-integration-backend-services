@@ -101,9 +101,9 @@ from difflib import SequenceMatcher
 import sys
 
 try:
-	conn2 = pymysql.connect(host='10.17.51.35',user='mysqlwb',password='mysqlwb',database='hino_bi_db')
+   	conn2 = pymysql.connect(host='10.17.51.35',user='mysqlwb',password='mysqlwb',database='hino_bi_db')
 except:
-	print ("I am unable to connect to the database hino_bi_db.")
+    print ("I am unable to connect to the database hino_bi_db.")
 
 cur = conn2.cursor()
 
@@ -129,9 +129,9 @@ for z in range(0,y):
 print ("Stop Copying..")
 
 try:
-	conn3 = pymysql.connect(host='10.17.51.35',user='mysqlwb',password='mysqlwb',database='hino_bi_db')
+   conn3 = pymysql.connect(host='10.17.51.35',user='mysqlwb',password='mysqlwb',database='hino_bi_db')
 except:
-	print ("I am unable to connect to the database hino_bi_db.")
+    print ("I am unable to connect to the database hino_bi_db.")
 
 cur3 = conn3.cursor()
 

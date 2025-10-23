@@ -26,8 +26,9 @@ cursor.execute("SELECT  count(*)as total FROM HMI17P001.ARFP42 T01  WHERE SUBSTR
 
 for row in cursor:
 	y=row[0]
-
+	
 testArr = [[None for _ in range(13)] for _ in range(y)]
+
 
 print(y)
 
@@ -118,6 +119,14 @@ cur3.execute(delete_query)
 # Execute insert statement
 insert_query = "insert into bi_lastupdate select 'dealer_ar_overdue_end_of_month' as bi_report, now() as last_update"
 cur3.execute(insert_query)
+# Execute delete statement
+delete_query = "delete from bi_lastupdate where bi_report = 'dealer_ar_overdue_end_of_month'"
+cur3.execute(delete_query)
+
+# Execute insert statement
+insert_query = "insert into bi_lastupdate select 'dealer_ar_overdue_end_of_month' as bi_report, now() as last_update"
+cur3.execute(insert_query)
 
 conn3.commit()
+print("Successfully updated bi_lastupdate table")
 print("Successfully updated bi_lastupdate table")
