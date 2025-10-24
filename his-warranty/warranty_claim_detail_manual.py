@@ -170,7 +170,7 @@ print("[STEP 7] ✓ IBM iSeries database connection closed")
 
 print("[STEP 8] Establishing MySQL database connection...")
 try:
-    conn2 = pymysql.connect(host='10.17.111.18',user='mysqlwb',password='mysqlwb',database='his_db_final_3')
+    conn2 = pymysql.connect(host='10.17.111.18',user='mysqlwb',password='IntegrationS4h1s2025',database='his_db_final_3')
     print("[STEP 8] ✓ Successfully connected to MySQL database (his_db_final_3)")
 except Exception as e:
     print(f"[STEP 8] ✗ Failed to connect to MySQL database: {e}")
