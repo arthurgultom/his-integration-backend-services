@@ -228,7 +228,7 @@ try:
     
     # Execute the main query
     curhisxx = conn22.cursor()
-    curhisxx.execute("SELECT Cust_Name,cust_email,cust_regional FROM hgs_mst_customersaldo_final group by Cust_Name order by Cust_Name ASC;")
+    curhisxx.execute("SELECT Cust_Name,cust_email,cust_regional FROM hgs_mst_customersaldo_final group by Cust_Name order by Cust_Name ASC LIMIT 1;")
     print("Main query executed successfully!")
     for dealer in curhisxx:
         print(f"Processing dealer: {dealer[0]}")
