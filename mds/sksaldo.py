@@ -70,7 +70,7 @@ def ProcessSendMail(dealerName, regional) :
     print(f"[ProcessSendMail] - Dealer list: {dealerList}")
 
     print(f"[ProcessSendMail] Step 6: Counting balance records from iSeries...")
-    cursor.execute("SELECT count(*)as total FROM (SELECT CUSTA1  FROM  IDS2101D.ARFP31 SAWAL WHERE SAWAL.SPMMA1="+monthbef+" AND SAWAL.SPYYA1="+yearbef+" AND CUSTA1 in ("+dealerList+")  GROUP BY CUSTA1,PRDCA1 )T")
+    cursor.execute("SELECT count(*)as total FROM (SELECT CUSTA1  FROM  HMI17P001.ARFP31 SAWAL WHERE SAWAL.SPMMA1="+monthbef+" AND SAWAL.SPYYA1="+yearbef+" AND CUSTA1 in ("+dealerList+")  GROUP BY CUSTA1,PRDCA1 )T")
 
     for row in cursor:
         y=row[0]
@@ -78,7 +78,7 @@ def ProcessSendMail(dealerName, regional) :
         print(f"[ProcessSendMail] - Found {y} balance records to process")
 
     print(f"[ProcessSendMail] Step 7: Retrieving detailed balance data from iSeries...")
-    cursor.execute("SELECT CUSTA1,PRDCA1,SUM(CBALA1)+SUM(ADUEA1)+SUM(OD30A1)+SUM(OD60A1)+SUM(OD90A1) FROM IDS2101D.ARFP31 SAWAL WHERE SAWAL.SPYYA1="+yearbef+" AND SAWAL.SPMMA1="+monthbef+"  AND CUSTA1 in ("+dealerList+") GROUP BY CUSTA1,PRDCA1 ")
+    cursor.execute("SELECT CUSTA1,PRDCA1,SUM(CBALA1)+SUM(ADUEA1)+SUM(OD30A1)+SUM(OD60A1)+SUM(OD90A1) FROM HMI17P001.ARFP31 SAWAL WHERE SAWAL.SPYYA1="+yearbef+" AND SAWAL.SPMMA1="+monthbef+"  AND CUSTA1 in ("+dealerList+") GROUP BY CUSTA1,PRDCA1 ")
 
     print(f"[ProcessSendMail] Step 8: Processing balance data and building test array...")
     x=0
@@ -140,7 +140,7 @@ def ProcessSendMail(dealerName, regional) :
         print(f"[ProcessSendMail] - Customer details: {nameCustomer} ({codeCustomer}), Email: {emailcustomer}")
 
         print(f"[ProcessSendMail] - Retrieving transaction details from iSeries for period {mth}/{yearx}...")
-        cursor.execute("SELECT TRDDA2,TRMMA2,TRYYA2,REFPA2,REF#A2,TTDSA2,DEBTA2,CREDA2,DBCRA2, DOCPA2, DOC#A2 FROM IDS2101D.ARFP02 SADTL WHERE SADTL.PPYYA2="+yearx+" AND SADTL.PPMMA2="+mth+" AND SADTL.CUSTA2='"+customer_code+"' AND SADTL.PRDCA2='"+prdcate+"' AND DESCA2 IN ('DISCOUNT','INVOICE','JOURNAL','CREDIT','RECEIPT')  ")
+        cursor.execute("SELECT TRDDA2,TRMMA2,TRYYA2,REFPA2,REF#A2,TTDSA2,DEBTA2,CREDA2,DBCRA2, DOCPA2, DOC#A2 FROM HMI17P001.ARFP02 SADTL WHERE SADTL.PPYYA2="+yearx+" AND SADTL.PPMMA2="+mth+" AND SADTL.CUSTA2='"+customer_code+"' AND SADTL.PRDCA2='"+prdcate+"' AND DESCA2 IN ('DISCOUNT','INVOICE','JOURNAL','CREDIT','RECEIPT')  ")
 
         print(f"[ProcessSendMail] - Processing transaction details...")
         x=0
