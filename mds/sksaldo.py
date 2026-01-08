@@ -32,7 +32,7 @@ def ProcessSendMail(dealerName, regional) :
     print(f"[ProcessSendMail] Starting email process for dealer: {dealerName}, regional: {regional}")
     
     print(f"[ProcessSendMail] Step 1: Establishing database connections...")
-    conn        = pyodbc.connect('DRIVER={IBM i Access ODBC Driver};SYSTEM=10.17.51.22;DATABASE=HMI17P001;UID=mdstest2;PWD=password2')
+    conn        = pyodbc.connect('DRIVER={IBM i Access ODBC Driver};SYSTEM=10.17.51.22;DATABASE=HMI17P001;UID=crm;PWD=password')
     # conn        = pyodbc.connect('DRIVER={iSeries Access ODBC Driver};SYSTEM=10.17.51.22;DATABASE=HMI17P001;UID=mdstest2;PWD=password2')
     print(f"[ProcessSendMail] - iSeries connection established")
     
