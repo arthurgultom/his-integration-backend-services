@@ -1,0 +1,3437 @@
+{
+  "info": {
+    "_postman_id": "b072e2dc-2137-4dd1-8d7e-baa4ef6d6373",
+    "name": "API HMSI for Dealer",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "28478137"
+  },
+  "item": [
+    {
+      "name": "Master",
+      "item": [
+        {
+          "name": "GetMasterCustomer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetMasterCustomer",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"104040000\",\r\n\"CustomerCode\":\"\",\r\n\"LastUpdateDate\":\"2025-05-01\",\r\n\"CreationDatetimeFrom\":\"\",\r\n\"CreationDatetimeTo\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/customermaster/list",
+              "protocol": "https",
+              "host": [
+                "hdcs",
+                "hinodms",
+                "co",
+                "id"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "customermaster",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetUserCompanyList",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetUserCompanyList",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"EmployeeNo\":\"DMSAPI001\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/usercompany/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "usercompany",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetExpeditionMaster",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetExpeditionMaster",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"ExpeditionCode\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/expeditionmaster/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "expeditionmaster",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetMasterEmployee",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetMasterEmployee",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"EmployeeNo\":\"\",\r\n\"LastUpdateDate\":\"2025-05-01\",\r\n\"CreationDatetimeFrom\":\"\",\r\n\"CreationDatetimeTo\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/employeemaster/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "employeemaster",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetMasterSupplier",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetMasterSupplier",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",   \r\n\"SupplierCode\":\"\",\r\n\"LastUpdateDate\":\"\",\r\n\"CreationDatetimeFrom\":\"2025-05-01\",\r\n\"CreationDatetimeTo\":\"2025-05-06\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/suppliermaster/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "suppliermaster",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetMasterItem",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetMasterItem",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"ItemCode\": \"\",\r\n    \"LastUpdateDate\": \"2025-05-01\",\r\n    \"CreationDatetimeFrom\": \"\",\r\n    \"CreationDatetimeTo\": \"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/masteritem/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "masteritem",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetMasterItemModelMapping",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetMasterItemModelMapping",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"ItemCode\":\"\",\r\n\"LastUpdateDate\":\"\",\r\n\"CreationDatetimeFrom\":\"2025-05-01\",\r\n\"CreationDatetimeTo\":\"2025-05-06\",\r\n\"UserInfo\":[\r\n{\r\n\"LoginID\":\"DMSAPI001\",\r\n\"Password\":\"password.123\"\r\n}\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/masteritemmodelmapping/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "masteritemmodelmapping",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetMasterPriceListItem",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetMasterPriceListItem",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"ItemCode\": \"0400462637\",\r\n\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/masterpricelistitem/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "masterpricelistitem",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetUnitSellingPrice",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetUnitSellingPrice",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"LastUpdateDate\":\"2025-05-01\",\r\n\"ModelCode\": \"\",\r\n\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/masterunitsellingprice/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "masterunitsellingprice",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetMasterStockListItem",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetMasterStockListItem",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102041000\",\r\n\"PeriodMonth\":\"05\",\r\n\"PeriodYear\": \"2025\",\r\n\"WhsGroup\": \"RP\",\r\n\"WhsCode\": \"RP000\",\r\n\"ItemCode\": \"753110W050\",\r\n\"IsStockOpname\": \"0\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"38834\",\r\n   \"Password\":\"password1\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapitest/frontend/web/index.php/masterstocklistitem/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapitest",
+                "frontend",
+                "web",
+                "index.php",
+                "masterstocklistitem",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetMasterColour",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetMasterColour",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"ColourCode\":\"\",\r\n\"LastUpdateDate\":\"2015-01-01\",\r\n\"CreationDatetimeFrom\":\"\",\r\n\"CreationDatetimeTo\":\"\",\r\n\"UserInfo\":[\r\n{\r\n\"LoginID\":\"DMSAPI001\",\r\n\"Password\":\"password.123\"\r\n}\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/mastercolour/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "mastercolour",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetMasterModel",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetMasterModel",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"ModelCode\":\"\",\r\n\"LastUpdateDate\":\"\",\r\n\"CreationDatetimeFrom\":\"2022-01-01\",\r\n\"CreationDatetimeTo\":\"2022-10-31\",\r\n\"UserInfo\":[\r\n{\r\n\"LoginID\":\"DMSAPI001\",\r\n\"Password\":\"password.123\"\r\n}\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/mastermodel/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "mastermodel",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetMasterVariant",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetMasterVariant",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"ModelCode\":\"\",\r\n\"VariantCode\":\"\",\r\n\"LastUpdateDate\":\"\",\r\n\"CreationDatetimeFrom\":\"2025-01-01\",\r\n\"CreationDatetimeTo\":\"2025-05-31\",\r\n\"UserInfo\":[\r\n{\r\n\"LoginID\":\"DMSAPI001\",\r\n\"Password\":\"password.123\"\r\n}\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/mastervariant/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "mastervariant",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetMasterVehicle",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetMasterVehicle",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"\",\r\n\"VehicleChassisNo\":\"\",\r\n//\"Vin\":\"\",\r\n\"LastUpdateDate\":\"2025-05-01\",\r\n//\"CreationDatetimeFrom\":\"\",\r\n//\"CreationDatetimeTo\":\"\",\r\n\"UserInfo\":[\r\n{\r\n\"LoginID\":\"DMSAPI001\",\r\n\"Password\":\"password.123\"\r\n}\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/mastervehicle/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "mastervehicle",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetMasterOperation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetMasterOperation",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"OperationCode\":\"\",\r\n\"ModelCode\":\"\",\r\n\"LastUpdateDate\":\"\",\r\n\"CreationDatetimeFrom\":\"2019-10-01\",\r\n\"CreationDatetimeTo\":\"2023-10-31\",\r\n\"UserInfo\":[\r\n{\r\n\"LoginID\":\"DMSAPI001\",\r\n\"Password\":\"password.123\"\r\n}\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/masteroperation/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "masteroperation",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetMasterPackage",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetMasterPackage",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"PackageCode\":\"2FSEU/115HD\",\r\n\"ModelCode\":\"\",\r\n\"VariantCode\":\"\",\r\n\"LastUpdateDate\":\"\",\r\n\"CreationDatetimeFrom\":\"2025-01-01\",\r\n\"CreationDatetimeTo\":\"2025-05-31\",\r\n\"UserInfo\":[\r\n{\r\n\"LoginID\":\"DMSAPI001\",\r\n\"Password\":\"password.123\"\r\n}\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/masterpackage/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "masterpackage",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetDealerRepCode",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetDealerRepCodeRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"StartDate\": \"\",\r\n    \"EndDate\": \"\",\r\n    \"LastUpdateDate\": \"\",\r\n    \"Status\": \"A\",\r\n    \"DealerRepCode\": \"\",\r\n    \"ProfitCenterCode\": \"\",\r\n    \"Flag\":\"0\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/masterrepcode/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "masterrepcode",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetExpeditionMaster",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetExpeditionMaster",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102041000\",\r\n\"ExpeditionCode\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"38834\",\r\n   \"Password\":\"password1\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapitest/frontend/web/index.php/expeditionmaster/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapitest",
+                "frontend",
+                "web",
+                "index.php",
+                "expeditionmaster",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Register",
+      "item": [
+        {
+          "name": "GetPickingListRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetPickingListRegister"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"StartDate\": \"2025-05-01\",\r\n    \"EndDate\": \"2025-05-06\",\r\n    \"LastUpdateDate\": \"\",\r\n    \"PickingListDocNo\": \"\",\r\n    \"PickingListSysNo\": \"\",\r\n    \"SoDocNo\": \"\",\r\n    \"SoSysNo\": \"\",\r\n    \"WhsGroup\": \"\",\r\n    \"WhsCode\": \"\",\r\n    \"ProfitCenter\": \"\",\r\n    \"Status\": \"\",\r\n    \"DealerRepCode\": \"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/pickinglist/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "pickinglist",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetGatePassRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetGatePassRegister"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"StartDate\": \"2025-05-01\",\r\n    \"EndDate\": \"2025-05-06\",\r\n    \"LastUpdateDate\": \"\",\r\n    \"GatePassSysNo\": \"\",\r\n    \"GatePassDocNo\": \"\",\r\n    \"WoSysNo\": \"\",\r\n    \"WoDocNo\": \"\",\r\n    \"Status\": \"\",\r\n    \"DealerRepCode\": \"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/gatepass/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "gatepass",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetSecurityGateRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetSecurityGateRegister"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"GateInDate\": \"\",\r\n    \"GateOutDate\": \"\",\r\n    \"VisitType\":\"\",\r\n    \"QueueNo\":\"\",\r\n    \"UniqueCode\":\"\",\r\n    \"NoPol\":\"\",\r\n    \"QueueStatus\": \"\",\r\n    \"DealerRepCode\": \"01020\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/securitygate/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "securitygate",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetPickingListSummaryRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetPickingListSummaryRegister"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"StartDate\": \"\",\r\n    \"EndDate\": \"\",\r\n    \"LastUpdateDate\": \"2025-05-01\",\r\n    \"PickingListDocNo\": \"\",\r\n    \"PickingListSysNo\": \"3138434\",\r\n    \"SoDocNo\": \"\",\r\n    \"SoSysNo\": \"\",\r\n    \"WhsGroup\": \"\",\r\n    \"WhsCode\": \"\",\r\n    \"ProfitCenter\": \"\",\r\n    \"Status\": \"20\",\r\n    \"DealerRepCode\": \"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+            },
+            "url": {
+              "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/pickinglistsummary/list",
+              "protocol": "https",
+              "host": [
+                "hdcs",
+                "hinodms",
+                "co",
+                "id"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "pickinglistsummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetPackingListMobileSummary",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetPackingListMobileSummary"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"CompanyCode\": \"102041000\",\r\n    \"PackListDocNo\": \"\",\r\n    \"PackListDocDate\": \"\",\r\n    \"CustomerName\": \"\",\r\n    \"DeliveryCp\": \"\",\r\n    \"DeliveryStatus\": \"\",\r\n    \"Page\": \"1\",\r\n    \"PageSize\": \"20\", //Jumlah data per page\r\n    \"SortBy\": \"PACK_LIST_DATE\", // PACK_LIST_DATE, PACK_LIST_NO, CUSTOMER_NAME\r\n    \"SortDir\": \"DESC\", //DESC or ASC\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+            },
+            "url": {
+              "raw": "https://hdcs.hinodms.co.id/restapitest/frontend/web/index.php/packinglistmobilesummary/list",
+              "protocol": "https",
+              "host": [
+                "hdcs",
+                "hinodms",
+                "co",
+                "id"
+              ],
+              "path": [
+                "restapitest",
+                "frontend",
+                "web",
+                "index.php",
+                "packinglistmobilesummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetPickingListMobileSummary",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetPickingListMobileSummary"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"CompanyCode\": \"102041000\",\r\n    \"PickListDocNo\": \"\",\r\n    \"PickListDocDate\": \"\",\r\n    \"CustomerName\": \"\",\r\n    \"SalesOrderDocNo\": \"\",\r\n    \"TransactionName\": \"\",\r\n    \"WarehouseCode\": \"\",\r\n    \"Page\": \"1\",\r\n    \"PageSize\": \"20\", //Jumlah data per page\r\n    \"SortBy\": \"PickListNo\", // PickListNo, PickListDate, SalesOrderNo, CustomerName, \r\n    \"SortDir\": \"DESC\", //DESC or ASC\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+            },
+            "url": {
+              "raw": "https://hdcs.hinodms.co.id/restapitest/frontend/web/index.php/pickinglistmobilesummary/list",
+              "protocol": "https",
+              "host": [
+                "hdcs",
+                "hinodms",
+                "co",
+                "id"
+              ],
+              "path": [
+                "restapitest",
+                "frontend",
+                "web",
+                "index.php",
+                "pickinglistmobilesummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetOustandingPickingListSummaryRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetOutstandingPickingListSummaryRegister"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"StartDate\": \"\",\r\n    \"EndDate\": \"\",\r\n    \"LastUpdateDate\": \"2025-05-01\",\r\n    \"PickingListDocNo\": \"\",\r\n    \"PickingListSysNo\": \"\",\r\n    \"SoDocNo\": \"\",\r\n    \"SoSysNo\": \"\",\r\n    \"WhsGroup\": \"\",\r\n    \"WhsCode\": \"\",\r\n    \"ProfitCenter\": \"\",\r\n    \"Status\": \"\",\r\n    \"DealerRepCode\": \"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/outstandingpickinglistsummary/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "outstandingpickinglistsummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetPackingListRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetPackingListRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"StartDate\": \"\",\r\n    \"EndDate\": \"\",\r\n    \"LastUpdateDate\": \"2025-05-01\",\r\n    \"PackListDocNo\": \"\",\r\n    \"PackListSysNo\": \"\",\r\n    \"SoDocNo\": \"\",\r\n    \"SoSysNo\": \"\",\r\n    \"WhsGroup\": \"\",\r\n    \"WhsCode\": \"\",\r\n    \"ProfitCenter\": \"\",\r\n    \"Status\": \"\",\r\n    \"DealerRepCode\": \"\",\r\n    \"DeliveryStatus\": \"\",\r\n    \"ExternalApp\": \"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapitraining/frontend/web/index.php/packinglist/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapitraining",
+                "frontend",
+                "web",
+                "index.php",
+                "packinglist",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetPackingListSummaryRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetPackingListSummaryRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"CompanyCode\": \"102041000\",\r\n    \"StartDate\": \"\",\r\n    \"EndDate\": \"\",\r\n    \"LastUpdateDate\": \"2025-02-01\",\r\n    \"PackListDocNo\": \"\",\r\n    \"PackListSysNo\": \"\",\r\n    \"SoDocNo\": \"\",\r\n    \"SoSysNo\": \"\",\r\n    //\"WhsCode\": \"\",\r\n    //\"ProfitCenter\": \"\",\r\n    \"Status\": \"\",\r\n    \"DealerRepCode\": \"\",\r\n    \"DeliveryStatus\": \"\",\r\n    \"ExternalApp\": \"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+            },
+            "url": {
+              "raw": "https://hdcs.hinodms.co.id/restapitest/frontend/web/index.php/packinglistsummary/list",
+              "protocol": "https",
+              "host": [
+                "hdcs",
+                "hinodms",
+                "co",
+                "id"
+              ],
+              "path": [
+                "restapitest",
+                "frontend",
+                "web",
+                "index.php",
+                "packinglistsummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetPickingListNewRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetPickingListNewRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"StartDate\": \"2025-05-01\",\r\n    \"EndDate\": \"2025-05-06\",\r\n    \"LastUpdateDate\": \"\",\r\n    \"PickingListDocNo\": \"\",\r\n    \"PickingListSysNo\": \"\",\r\n    \"SoDocNo\": \"\",\r\n    \"SoSysNo\": \"\",\r\n    \"WhsGroup\": \"\",\r\n    \"WhsCode\": \"\",\r\n    \"ProfitCenter\": \"\",\r\n    \"Status\": \"10\",\r\n    \"DealerRepCode\": \"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/pickinglistnew/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "pickinglistnew",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetPartOtherInvoiceReceiptRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetPartOtherInvoiceReceiptRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102090000\",\r\n\"StartDate\":\"2026-01-01\",\r\n\"EndDate\":\"2026-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"TransactionType\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"InvoiceReceiptSysNo\":\"\",\r\n\"InvoiceReceiptDocNo\":\"\",\r\n\"RefDocNo\":\"WSWO/H/01/26/00261\",\r\n\"Stat\":\"20\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/partotherinvoicereceipt/list",
+              "protocol": "https",
+              "host": [
+                "hdcs",
+                "hinodms",
+                "co",
+                "id"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "partotherinvoicereceipt",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetInvoiceReceiptRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetInvoiceReceiptRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"VehicleChassisNo\":\"\",\r\n\"TransactionType\":\"\",\r\n\"InvoiceReceiptNo\":\"\",\r\n\"SupplierCode\":\"\",\r\n\"ProfitCenterCode\":\"\",\r\n\"Stat\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/invoicereceipt/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "invoicereceipt",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetInventoryAdjustmentRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetInventoryAdjustmentRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"AdjustmentNo\":\"\",\r\n\"WhsGroup\":\"\",\r\n\"WhsCode\":\"\",\r\n\"Stat\":\"20\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/inventoryadjustment/list",
+              "protocol": "https",
+              "host": [
+                "hdcs",
+                "hinodms",
+                "co",
+                "id"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "inventoryadjustment",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetStockOpnameRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetStockOpnameRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"CreationDatetimeFrom\":\"\",\r\n\"CreationDatetimeTo\":\"\",\r\n\"LastUpdateDate\":\"2025-05-01\",\r\n\"StockOpnameNo\":\"\",\r\n\"WhsGroup\":\"\",\r\n\"WhsCode\":\"\",\r\n\"Stat\":\"\",\r\n\"EmployeeNo\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/stockopname/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "stockopname",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetStockOpnameRegisterSummary",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetStockOpnameRegisterSummary",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"CreationDatetimeFrom\":\"\",\r\n\"CreationDatetimeTo\":\"\",\r\n\"LastUpdateDate\":\"2025-05-01\",\r\n\"StockOpnameNo\":\"\",\r\n\"WhsGroup\":\"\",\r\n\"WhsCode\":\"\",\r\n\"Stat\":\"\",\r\n\"EmployeeNo\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/stockopnamesummary/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "stockopnamesummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetStockOpnameExclMainWhs",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetStockOpnameExclMainWhs",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"StockOpnameNo\": \"\",\r\n    \"WhsGroup\": \"\",\r\n    \"WhsCode\": \"\",\r\n    \"WhsCodeStockOpname\": \"\",\r\n    \"ItemCode\": \"15110EW010\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/stockopnameexclmainwhs/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "stockopnameexclmainwhs",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetPurchaseOrderRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetPurchaseOrderRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"PoDocNo\":\"\",\r\n\"SupplierCode\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"Stat\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/purchaseorder/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "purchaseorder",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetGoodsReceiveRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetGoodsReceiveRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"GrDocNo\":\"\",\r\n\"PoDocNo\":\"\",\r\n\"SupplierCode\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"Stat\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/goodsreceive/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "goodsreceive",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetGoodsReceiveSummaryRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetGoodsReceiveSummaryRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"GrDocNo\":\"\",\r\n\"PoDocNo\":\"\",\r\n\"SupplierCode\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"Stat\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/goodsreceivesummary/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "goodsreceivesummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getGoodsReceiveReturnRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "getGoodsReceiveReturnRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"PoNo\":\"\",\r\n\"GrNo\":\"\",\r\n\"GrReturnNo\":\"\",\r\n\"Status\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/goodsreceivereturn/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "goodsreceivereturn",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getGoodsReceiveReturnSummaryRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "getGoodsReceiveReturnSummaryRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"PoNo\":\"\",\r\n\"GrNo\":\"\",\r\n\"GrReturnNo\":\"\",\r\n\"Status\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/goodsreceivereturnsummary/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "goodsreceivereturnsummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetTransferInRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetTransferInRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \r\n \"CompanyCode\": \"102030001\", \r\n \"StartDate\": \"2025-05-01\", \r\n \"EndDate\": \"2025-05-06\",\r\n \"TransferInDocNo\":\"\",\r\n \"TransferInSysNo\":\"\",\r\n \"WhsGroup\":\"\",\r\n \"WhsCode\":\"\",\r\n \"Stat\": \"\", \r\n \"UserInfo\": \r\n [ \r\n  { \r\n   \"LoginID\": \"DMSAPI001\", \r\n   \"Password\": \"password.123\" \r\n   \r\n  } \r\n ] \r\n \r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/transferin/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "transferin",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetTransferInSummaryRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetTransferInSummaryRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \r\n \"CompanyCode\": \"102030001\", \r\n \"StartDate\": \"2025-05-01\", \r\n \"EndDate\": \"2025-05-06\",\r\n \"WhsGroup\":\"\",\r\n \"WhsCode\":\"\",\r\n \"Stat\": \"\", \r\n \"UserInfo\": \r\n [ \r\n  { \r\n   \"LoginID\": \"DMSAPI001\", \r\n   \"Password\": \"password.123\" \r\n   \r\n  } \r\n ] \r\n \r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/transferinsummary/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "transferinsummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetTransferOutRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetTransferOutRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \r\n \"CompanyCode\": \"102030001\", \r\n \"StartDate\": \"2025-05-01\", \r\n \"EndDate\": \"2025-05-06\",\r\n \"WhsGroup\":\"\",\r\n \"WhsCode\":\"\",\r\n \"TransferOutDocNo\":\"\",\r\n \"Stat\": \"\", \r\n \"UserInfo\": \r\n [ \r\n  { \r\n   \"LoginID\": \"DMSAPI001\", \r\n   \"Password\": \"password.123\" \r\n   \r\n  } \r\n ] \r\n \r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/transferout/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "transferout",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetTransferOutSummaryRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetTransferOutSummaryRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \r\n \"CompanyCode\": \"102030001\", \r\n \"StartDate\": \"2025-05-01\", \r\n \"EndDate\": \"2025-05-06\",\r\n \"WhsGroup\":\"\",\r\n \"WhsCode\":\"\",\r\n \"Stat\": \"\", \r\n \"UserInfo\": \r\n [ \r\n  { \r\n   \"LoginID\": \"DMSAPI001\", \r\n   \"Password\": \"password.123\" \r\n   \r\n  } \r\n ] \r\n \r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/transferoutsummary/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "transferoutsummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetPickingListReturnRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetPickingListReturnRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"WhsGroup\":\"\",\r\n\"WhsCode\":\"\",\r\n\"PickingReturnDocNo\":\"\",\r\n\"PickingReturnSysNo\":\"\",\r\n\"PickingListDocNo\":\"\",\r\n\"PickingListSysNo\":\"\",\r\n\"SoDocNo\":\"\",\r\n\"SoSysNo\":\"\",\r\n\"ProfitCenter\":\"\",\r\n\"Stat\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/pickinglistreturn/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "pickinglistreturn",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetSupplySlipRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetSupplySlipRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"WhsGroup\":\"\",\r\n\"WhsCode\":\"\",\r\n\"SupplySlipDocNo\":\"\",\r\n\"SupplySlipSysNo\":\"\",\r\n\"WoDocNo\":\"\",\r\n\"WoSysNo\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"Status\":\"\",\r\n\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/supplyslip/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "supplyslip",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetSupplySlipSummaryRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetSupplySlipSummaryRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"SupplySlipDocNo\":\"\",\r\n\"SupplySlipSysNo\":\"\",\r\n\"WoDocNo\":\"\",\r\n\"WoSysNo\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"Status\":\"\",\r\n\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/supplyslipsummary/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "supplyslipsummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetSupplySlipReturnRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetSupplySlipReturnRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"WhsGroup\":\"\",\r\n\"WhsCode\":\"\",\r\n\"SupplySlipReturnDocNo\":\"\",\r\n\"SupplySlipDocNo\":\"\",\r\n\"SupplySlipSysNo\":\"\",\r\n\"WoDocNo\":\"\",\r\n\"WoSysNo\":\"\",\r\n\"Stat\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/supplyslipreturn/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "supplyslipreturn",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetSupplySlipReturnSummaryRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetSupplySlipReturnSummaryRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"WhsGroup\":\"\",\r\n\"WhsCode\":\"\",\r\n\"SupplySlipReturnDocNo\":\"\",\r\n\"SupplySlipReturnSysNo\":\"\",\r\n\"SupplySlipDocNo\":\"\",\r\n\"SupplySlipSysNo\":\"\",\r\n\"WoDocNo\":\"\",\r\n\"WoSysNo\":\"\",\r\n\"Stat\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/supplyslipreturnsummary/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "supplyslipreturnsummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetWorkOrderRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetWorkOrderRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"WoDocNo\":\"\",\r\n\"WoSysNo\":\"\",\r\n\"Status\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"ForemanId\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/workorder/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "workorder",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetWorkOrderSummaryRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetWorkOrderSummaryRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"WoDocNo\":\"\",\r\n\"WoSysNo\":\"\",\r\n\"Status\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"ServiceAdvisorId\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/workordersummary/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "workordersummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetWorkOrderDetailRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetWorkOrderDetailRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"WoDocNo\":\"\",\r\n\"WoSysNo\":\"\",\r\n\"BookingNo\":\"\",\r\n\"Stat\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/workorderdetail/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "workorderdetail",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetWorkOrderBookingRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetWorkOrderBookingRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"WoNo\": \"WSWO/H/05/25/08015\",\r\n    \"BookingNo\": \"\",\r\n    \"EstimationNo\":\"\",\r\n    \"WoStatus\": \"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/workorderbooking/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "workorderbooking",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetWorkOrderInvoiceRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetWorkOrderInvoiceRegister"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"104040000\",\r\n\"StartDate\":\"\",\r\n\"EndDate\":\"\",\r\n\"LastUpdateDate\":\"2024-06-19\",\r\n\"DealerRepCode\":\"\",\r\n\"WoInvoiceNo\":\"\",\r\n\"WoInvoiceSysNo\":\"\",\r\n\"WoDocNo\":\"\",\r\n\"WoSysNo\":\"\",\r\n\"Stat\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"38834\",\r\n   \"Password\":\"P4ssw0rd-01\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/workorderinvoice/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "workorderinvoice",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetWorkOrderInvoiceRegisterSummary",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetWorkOrderInvoiceRegisterSummary",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"WoInvoiceNo\":\"\",\r\n\"WoInvoiceSysNo\":\"\",\r\n\"WoDocNo\":\"\",\r\n\"WoSysNo\":\"\",\r\n\"Stat\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/workorderinvoiceregistersummary/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "workorderinvoiceregistersummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetWorkOrderInvoiceBatchSummary",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetWorkOrderInvoiceBatchSummary",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"WoInvoiceNo\":\"\",\r\n\"WoInvoiceSysNo\":\"\",\r\n\"Stat\":\"20\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/workorderinvoicebatchsummary/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "workorderinvoicebatchsummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetCreditNoteRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetCreditNoteRegister"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102090000\",\r\n\"StartDate\":\"2024-05-01\",\r\n\"EndDate\":\"2024-05-31\",\r\n\"LastUpdateDate\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"CreditNoteSysNo\":\"\",\r\n\"CreditNoteDocNo\":\"\",\r\n\"InvSysNo\":\"\",\r\n\"InvDocNo\":\"SPIV/H/04/24/00323\",\r\n\"Status\":\"20\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"38834\",\r\n   \"Password\":\"P4ssw0rd-01\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/creditnoteregister/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "creditnoteregister",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetWorkOrderInvoiceReturnRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetWorkOrderInvoiceReturnRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"WoInvoiceReturnNo\":\"\",\r\n\"WoInvoiceReturnSysNo\":\"\",\r\n\"WoDocNo\":\"\",\r\n\"Stat\":\"20\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/workorderinvoicereturn/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "workorderinvoicereturn",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetWorkOrderInvoiceReturnSummaryRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetWorkOrderInvoiceReturnSummaryRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"WoInvoiceReturnNo\":\"\",\r\n\"WoInvoiceReturnSysNo\":\"\",\r\n\"WoDocNo\":\"\",\r\n\"Stat\":\"20\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/workorderinvoicereturnsummary/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "workorderinvoicereturnsummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetSalesOrderRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetSalesOrderRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"StartDate\": \"2025-05-01\",\r\n    \"EndDate\": \"2025-05-06\",\r\n    \"LastUpdateDate\": \"\",\r\n    \"SoDocNo\": \"\",\r\n    \"SoSysNo\": \"\",\r\n    \"Status\": \"\",\r\n    \"DealerRepCode\": \"\",\r\n    \"TransactionType\": \"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/salesorder/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "salesorder",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetSalesOrderSummaryRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetSalesOrderSummaryRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"SoDocNo\":\"\",\r\n\"SoSysNo\":\"\",\r\n\"Stat\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"TranssactionType\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/salesordersummary/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "salesordersummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetSalesOrderInvoiceRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetSalesOrderInvoiceRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"StartDate\": \"2025-05-01\",\r\n    \"EndDate\": \"2025-05-06\",\r\n    \"LastUpdateDate\": \"\",\r\n    \"DealerRepCode\": \"\",\r\n    \"SoInvoiceNo\": \"\",\r\n    \"SoInvoiceSysNo\": \"\",\r\n    \"SoDocNo\": \"\",\r\n    \"SoSysNo\": \"\",\r\n    \"Stat\": \"20\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/salesorderinvoice/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "salesorderinvoice",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetSalesOrderInvoiceSummaryRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetSalesOrderInvoiceSummaryRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"SoInvoiceNo\":\"\",\r\n\"SoInvoiceSysNo\":\"\",\r\n\"SoDocNo\":\"\",\r\n\"SoSysNo\":\"\",\r\n\"Stat\":\"20\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/salesorderinvoicesummary/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "salesorderinvoicesummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetCashManagementInRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetCashManagementInRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"CMInNo\":\"\",\r\n\"InvoiceNo\":\"\",\r\n\"Stat\":\"20\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/cashmanagementin/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "cashmanagementin",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetTandaTerimaPembayaranRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetTandaTerimaPembayaranRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"TtpNo\":\"\",\r\n\"CMInNo\":\"\",\r\n\"InvoiceNo\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"ProfitCenterCode\":\"\",\r\n\"Stat\":\"20\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/tandaterimapembayaran/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "tandaterimapembayaran",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetTaxInvoiceEFakturRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetTaxInvoiceEFakturRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"PeriodMonth\":\"05\",\r\n\"PeriodYear\":\"2025\",\r\n\"TaxInvNo\":\"\",\r\n\"InvoiceNo\":\"\",\r\n\"TaxType\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/taxinvoicefaktur/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "taxinvoicefaktur",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetSalesOrderInvoiceReturnSummaryRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetSalesOrderInvoiceReturnSummaryRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"DealerRepCode\":\"\",\r\n\"SoInvoiceReturnNo\":\"\",\r\n\"SoInvoiceNo\":\"\",\r\n\"SoDocNo\":\"\",\r\n\"Stat\":\"20\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/salesorderinvoicereturnsummary/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "salesorderinvoicereturnsummary",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetSalesOrderInvoiceReturnRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetSalesOrderInvoiceReturnRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"104040000\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"DealerRepCode\":\"\",\r\n\"SoInvoiceReturnNo\":\"\",\r\n\"SoInvoiceNo\":\"\",\r\n\"SoDocNo\":\"\",\r\n\"Stat\":\"20\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/salesorderinvoicereturn/list",
+              "protocol": "https",
+              "host": [
+                "hdcs",
+                "hinodms",
+                "co",
+                "id"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "salesorderinvoicereturn",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetBookingInfoRegister",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "Hino.impl3",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "Hino@oracle1",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetBookingInfoRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \"CompanyCode\": \"102030001\",\r\n \"VehicleChassisNo\": \"\",\r\n \"BookingDocNo\": \"\",\r\n \"BookingStatus\": \"0\",\r\n \"BookingServDate\": \"\",\r\n \"BookingServTime\": \"\",\r\n \"BookingServDateFrom\": \"2025-05-01\",\r\n \"BookingServDateTo\": \"2025-05-06\",\r\n \"CpContactViaCode\": \"\",\r\n \"DealerRepCode\": \"\",\r\n \"ServiceSite\": \"\",\r\n \"CreationDatetime\": \"\",\r\n \"ChangeDatetime\": \"\",\r\n \"UserInfo\": [\r\n  {\r\n   \"LoginID\": \"DMSAPI001\",\r\n   \"Password\": \"password.123\"\r\n  }\r\n  ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/bookinginfo/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "bookinginfo",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetEstimationRegister",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "Hino.impl3",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "Hino@oracle1",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetEstimationRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \"CompanyCode\": \"102030001\",\r\n \"VehicleChassisNo\": \"\",\r\n \"EstimationNo\": \"\",\r\n \"BillCustCode\": \"CP1600193-047\",\r\n \"DealerRepCode\": \"\",\r\n \"CreationDatetime\": \"\",\r\n \"ChangeDatetime\": \"\",\r\n \"UserInfo\": [\r\n  {\r\n   \"LoginID\": \"DMSAPI001\",\r\n   \"Password\": \"password.123\"\r\n  }\r\n  ]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/estimation/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "estimation",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetVehicleHistoryRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetVehicleHistoryRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"0\",\r\n\"StartDate\":\"2017-07-17\",\r\n\"EndDate\":\"\",\r\n\"VehicleChassisNo\":\"MJEECB2F2R5003920\",\r\n\"JobType\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/vehiclehistory/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "vehiclehistory",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetAgreementDetailRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetAgreementDetailRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"AgreementType\":\"\",\r\n\"PicNik\":\"\",\r\n\"ProfitCenter\":\"SPP\",\r\n\"Stat\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/agreementdetail/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "agreementdetail",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetPurchaseOrderRegister",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Id",
+                "value": "hmsi",
+                "type": "text"
+              },
+              {
+                "key": "Pwd",
+                "value": "hmsi:hmsipassword123",
+                "type": "text"
+              },
+              {
+                "key": "ProcFlag",
+                "value": "GetPurchaseOrderRegister",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"LastUpdateDate\":\"\",\r\n\"GrDocNo\":\"\",\r\n\"PoDocNo\":\"\",\r\n\"SupplierCode\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"Stat\":\"99\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/restapi/frontend/web/index.php/purchaseorder/list",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "restapi",
+                "frontend",
+                "web",
+                "index.php",
+                "purchaseorder",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseURL",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

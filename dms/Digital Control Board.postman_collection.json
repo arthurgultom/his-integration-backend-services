@@ -1,0 +1,2201 @@
+{
+  "info": {
+    "_postman_id": "13e62433-1904-4b9d-a973-b91ccf78c396",
+    "name": "Digital Control Board",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "28478137"
+  },
+  "item": [
+    {
+      "name": "GetDealerRepCode",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetDealerRepCodeRegister",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"StartDate\":\"\",\r\n\"EndDate\":\"\",\r\n\"LastUpdateDate\":\"2015-01-01\",\r\n\"Status\":\"\",\r\n\"DealerRepCode\":\"\",\r\n\"ProfitCenterCode\":\"00005\",\r\n\"UserInfo\":[\r\n{\r\n\"LoginID\":\"DMSAPI001\",\r\n\"Password\":\"password.123\"\r\n}\r\n]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/masterrepcode/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "masterrepcode",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetWorkInfo",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetWorkInfoRegister",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"WoSysNo\": \"\",\r\n    \"WoDocNo\": \"\",\r\n    \"LastUpdate\": \"\",\r\n    \"StartDate\": \"2025-05-01\",\r\n    \"EndDate\": \"2025-05-06\",\r\n    \"DealerRepCode\": \"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/workinfo/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "workinfo",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetUserCompanyList",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetUserCompanyList",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"EmployeeNo\": \"DMSAPI001\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/usercompany/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "usercompany",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetMasterEmployee",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetMasterEmployee",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"EmployeeNo\": \"\",\r\n    \"LastUpdateDate\": \"2015-01-01\",\r\n    \"CreationDatetimeFrom\": \"\",\r\n    \"CreationDatetimeTo\": \"\",\r\n    \"ProfitCenterCode\": \"00005\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/employeemaster/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "employeemaster",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetServicePerformanceDaily",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetServicePerformanceDaily",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"CpusType\": \"\",\r\n    \"PeriodDate\": \"2025-05-06\",\r\n    \"PeriodMonth\": \"2025-05\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/serviceperformancedaily/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "serviceperformancedaily",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetSalesOrderOutstandingSummary",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetSalesOrderOutstandingSummary",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"DealerRepCode\":\"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/salesorderoutstandingsummary/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "salesorderoutstandingsummary",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetSalesOrderOutstandingDetail",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetSalesOrderOutstandingDetail",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"DealerRepCode\":\"\",\r\n    \"TransType\":\"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/salesorderoutstandingdetail/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "salesorderoutstandingdetail",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetWorkOrderOutstandingRegister",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetWorkOrderOutstandingRegister",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"DealerRepCode\":\"\",\r\n    \"LastUpdate\":\"\",\r\n    \"WoDocNo\":\"\",\r\n    \"WoSysNo\":\"\",\r\n    \"Status\":\"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/workorderoutstanding/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "workorderoutstanding",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetPickingListOutstandingRegister",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetPickingListOutstandingRegister",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"WhsGroup\":\"\",\r\n    \"WhsCode\":\"\",\r\n    \"PickListDocNo\":\"\",\r\n    \"PickListSysNo\":\"\",\r\n    \"SoDocNo\":\"\",\r\n    \"SoSysNo\":\"\",\r\n    \"ProfitCenter\":\"\",\r\n    \"LastUpdate\":\"\",\r\n    \"DealerRepCode\":\"\",\r\n    //\"Status\":\"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/pickinglistoutstanding/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "pickinglistoutstanding",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetSalesOrderOutstandingByTrans",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetSalesOrderOutstandingByTrans",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"DealerRepCode\":\"\",\r\n    \"TransType\":\"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/salesorderoutstandingbytrans/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "salesorderoutstandingbytrans",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetServicePerformanceMonthly",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetServicePerformanceMonthly",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"CpusType\":\"\",\r\n    \"PeriodMonth\": \"2025-05\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/serviceperformancemonthly/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "serviceperformancemonthly",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetServicePerformanceYearly",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetServicePerformanceYearly",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"CpusType\":\"CPUS\",\r\n    \"PeriodYear\": \"2025\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/serviceperformanceyearly/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "serviceperformanceyearly",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetSparepartControlBoardDetail",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetSparepartControlBoardDetail",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"DatePeriod\":\"2025-05-06\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/sparepartcontrolboarddetail/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "sparepartcontrolboarddetail",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetDealerRepCode",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetDealerRepCodeRegister",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"StartDate\": \"\",\r\n    \"EndDate\": \"\",\r\n    \"LastUpdateDate\": \"\",\r\n    \"Status\": \"A\",\r\n    \"DealerRepCode\": \"\",\r\n    \"ProfitCenterCode\": \"00005\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/masterrepcode/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "masterrepcode",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetDealerSite",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetDealerSiteRegister",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"Status\": \"A\",\r\n    \"DealerSiteId\": \"00\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/masterdealersite/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "masterdealersite",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetCompanyList",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetCompanyListRegister",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"Status\": \"A\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/mastercompanylist/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "mastercompanylist",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetSparepartControlBoardSummaryMonthly",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetSparepartControlBoardSummaryMonthly",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"PeriodYear\":\"2025\",\r\n\"PeriodMonth\":\"05\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/sparepartcontrolboardsummonthly/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "sparepartcontrolboardsummonthly",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetSparepartControlBoardSummaryYearly",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetSparepartControlBoardSummaryYearly",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"PeriodYear\": \"2025\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/sparepartcontrolboardsumyearly/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "sparepartcontrolboardsumyearly",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetSparepartControlBoardByTransType",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetSparepartControlBoardByTransType",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"MonthPeriod\": \"2025-05\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DMSAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/sparepartcontrolboardtranssummary/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "sparepartcontrolboardtranssummary",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetSparepartControlBoardSalesTarget",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetSparepartControlBoardSalesTarget",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"PeriodYear\":\"2025\",\r\n\"PeriodMonth\":\"05\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/sparepartcontrolboardsalestarget/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "sparepartcontrolboardsalestarget",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetSvcPerformProdTargetMonthly",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetSvcPerformProdTargetMonthly",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"PeriodYear\":\"2025\",\r\n\"PeriodMonth\":\"\",\r\n\"Id\":\"CPUS\",\r\n\"IdType\":\"UnitEntry\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/svcperformprodtargetmonthly/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "svcperformprodtargetmonthly",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetSparepartControlBoardSalesTargetYearly",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetSparepartControlBoardSalesTargetYearly",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"PeriodYear\":\"2025\",\r\n\"Semester\":\"2\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/sparepartcontrolboardsalestargetyearly/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "sparepartcontrolboardsalestargetyearly",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetSparepartControlBoardMovingCode",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetSparepartControlBoardMovingCode",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"PeriodYear\":\"2025\",\r\n\"PeriodMonth\":\"07\",\r\n\"MovingCode\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/sparepartcontrolboardmovingcode/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "sparepartcontrolboardmovingcode",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetListHolidays",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM5MzEyIiwicHMiOiIxMjM0NTY3OCIsImlhdCI6MTc0NjU5OTc5MCwiZXhwIjoxNzQ2NjQyOTkwfQ.o1a4QNZny8konrfpU151kZP-B45aAdqSlyDFFCp53o0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://backendservice.hino.co.id/hmsi/board/api/listHolidays",
+          "protocol": "https",
+          "host": [
+            "backendservice",
+            "hino",
+            "co",
+            "id"
+          ],
+          "path": [
+            "hmsi",
+            "board",
+            "api",
+            "listHolidays"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetWorkInfoRegister",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetWorkInfoRegister",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"CompanyCode\":\"102030001\",\r\n\"WoSysNo\":\"\",\r\n\"WoDocNo\":\"\",\r\n\"LastUpdate\":\"\",\r\n\"StartDate\":\"2025-05-01\",\r\n\"EndDate\":\"2025-05-06\",\r\n\"DealerRepCode\":\"\",\r\n\"UserInfo\":[\r\n  {\r\n   \"LoginID\":\"DMSAPI001\",\r\n   \"Password\":\"password.123\"\r\n  }\r\n]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/workinfo/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "workinfo",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetBookingInfoRegister",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "Hino.impl3",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "Hino@oracle1",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetBookingInfoRegister",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \"CompanyCode\": \"102030001\",\r\n \"VehicleChassisNo\": \"\",\r\n \"BookingDocNo\": \"\",\r\n \"BookingStatus\": \"\",\r\n \"BookingServDate\": \"\",\r\n \"BookingServTime\": \"\",\r\n \"BookingServDateFrom\": \"2025-05-01\",\r\n \"BookingServDateTo\": \"2025-05-06\",\r\n \"CpContactViaCode\": \"\",\r\n \"DealerRepCode\": \"\",\r\n \"ServiceSite\": \"\",\r\n \"CreationDatetime\": \"\",\r\n \"ChangeDatetime\": \"\",\r\n \"UserInfo\": [\r\n  {\r\n   \"LoginID\": \"DMSAPI001\",\r\n   \"Password\": \"password.123\"\r\n  }\r\n  ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/bookinginfo/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "bookinginfo",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetWarehouseLocation",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetWarehouseLocation",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"DealerRepCode\":\"01030\",\r\n    \"WhsCode\":\"RP000\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DCBAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapitest/frontend/web/index.php/warehouselocation/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapitest",
+            "frontend",
+            "web",
+            "index.php",
+            "warehouselocation",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetWarehouseLocationMapping",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetWarehouseMapping",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"DealerRepCode\":\"01030\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DCBAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapitest/frontend/web/index.php/warehousemapping/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapitest",
+            "frontend",
+            "web",
+            "index.php",
+            "warehousemapping",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetWarehouseLocationSummaryAll",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetWarehouseLocationSummaryAll",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"DealerRepCode\":\"01030\",\r\n    \"WhsCode\":\"RP000\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DCBAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapitest/frontend/web/index.php/warehouselocationsummaryall/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapitest",
+            "frontend",
+            "web",
+            "index.php",
+            "warehouselocationsummaryall",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetWarehouseProdPickLeadTime",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetWarehouseProdPickLeadTime",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"105040000\",\r\n    \"DealerRepCode\":\"01030\",\r\n    \"WhsCode\":\"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DCBAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapitest/frontend/web/index.php/warehouseprodpickleadtime/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapitest",
+            "frontend",
+            "web",
+            "index.php",
+            "warehouseprodpickleadtime",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetWarehouseProdPackLeadTime",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetWarehouseProdPackLeadTime",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"105040000\",\r\n    \"DealerRepCode\":\"01030\",\r\n    \"WhsCode\":\"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DCBAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapitest/frontend/web/index.php/warehouseprodpackleadtime/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapitest",
+            "frontend",
+            "web",
+            "index.php",
+            "warehouseprodpackleadtime",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetWarehouseProdDlvrLeadTime",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetWarehouseProdDlvrLeadTime",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"105040000\",\r\n    \"DealerRepCode\":\"01030\",\r\n    \"WhsCode\":\"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DCBAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/warehouseproddlvrleadtime/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "warehouseproddlvrleadtime",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetWarehouseProdSumMonthly",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetWarehouseProdSumMonthly",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"105040000\",\r\n    \"DealerRepCode\":\"01030\",\r\n    \"WhsCode\":\"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DCBAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/warehouseprodsummonthly/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "warehouseprodsummonthly",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetWarehouseProdPercentageWeekly",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetWarehouseProdPercentageWeekly",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"105040000\",\r\n    \"DealerRepCode\":\"01030\",\r\n    \"WhsCode\":\"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DCBAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/warehouseprodpercentageweekly/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "warehouseprodpercentageweekly",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetWarehouseProdPicWeekly",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetWarehouseProdPicWeekly",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"105040000\",\r\n    \"DealerRepCode\":\"01030\",\r\n    \"WhsCode\":\"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DCBAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/warehouseprodpicweekly/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "warehouseprodpicweekly",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetWarehouseProdScoreMonthly",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetWarehouseProdScoreMonthly",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"103090000\",\r\n    \"DealerRepCode\":\"01030\",\r\n    \"PeriodYear\":\"2026\",\r\n    \"PeriodMonth\":\"02\",\r\n    \"WhsCode\":\"RP000\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DCBAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/warehouseprodscoremonthly/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "warehouseprodscoremonthly",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetWarehouseProdPicScore",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetWarehouseProdPicScore",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"103090000\",\r\n    \"DealerRepCode\":\"01030\",\r\n    \"PeriodYear\":\"2026\",\r\n    \"PeriodMonth\":\"02\",\r\n    \"WhsCode\":\"RP000\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DCBAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/warehouseprodpicscore/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "warehouseprodpicscore",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetWarehouseLocationSumByLorong",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetWarehouseLocationSumByLorong",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"DealerRepCode\":\"01030\",\r\n    \"WhsCode\":\"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DCBAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapitest/frontend/web/index.php/warehouselocationsumbylorong/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapitest",
+            "frontend",
+            "web",
+            "index.php",
+            "warehouselocationsumbylorong",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetWarehouseLocationSumByRak",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetWarehouseLocationSumByRak",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"DealerRepCode\":\"01030\",\r\n    \"WhsCode\":\"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DCBAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapitest/frontend/web/index.php/warehouselocationsumbyrak/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapitest",
+            "frontend",
+            "web",
+            "index.php",
+            "warehouselocationsumbyrak",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetDeliveryStatusReadyToShip",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetDeliveryStatusReadyToShip",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102041000\",\r\n    \"DealerRepCode\":\"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DCBAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapitest/frontend/web/index.php/deliverystatusreadytoship/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapitest",
+            "frontend",
+            "web",
+            "index.php",
+            "deliverystatusreadytoship",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetDeliveryStatusSummary",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetDeliveryStatusSummary",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"105040000\",\r\n    \"DealerRepCode\":\"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DCBAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapi/frontend/web/index.php/deliverystatussummary/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapi",
+            "frontend",
+            "web",
+            "index.php",
+            "deliverystatussummary",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetDeliveryStatusShipped",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetDeliveryStatusShipped",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"DealerRepCode\":\"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DCBAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapitest/frontend/web/index.php/deliverystatusshipped/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapitest",
+            "frontend",
+            "web",
+            "index.php",
+            "deliverystatusshipped",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetDeliveryStatusReadyForPacking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Id",
+            "value": "hmsi",
+            "type": "text"
+          },
+          {
+            "key": "Pwd",
+            "value": "hmsi:hmsipassword123",
+            "type": "text"
+          },
+          {
+            "key": "ProcFlag",
+            "value": "GetDeliveryStatusReadyForPacking",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"CompanyCode\": \"102030001\",\r\n    \"DealerRepCode\":\"\",\r\n    \"UserInfo\": [\r\n        {\r\n            \"LoginID\": \"DCBAPI001\",\r\n            \"Password\": \"password.123\"\r\n        }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "https://hdcs.hinodms.co.id/restapitest/frontend/web/index.php/deliverystatusreadyforpacking/list",
+          "protocol": "https",
+          "host": [
+            "hdcs",
+            "hinodms",
+            "co",
+            "id"
+          ],
+          "path": [
+            "restapitest",
+            "frontend",
+            "web",
+            "index.php",
+            "deliverystatusreadyforpacking",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
