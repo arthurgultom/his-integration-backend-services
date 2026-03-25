@@ -1,0 +1,3 @@
+Done. processed=1 sent=1 skipped=0 failed=0
+DEBUG mode enabled. Payloads were written to: /home/ms_sahrul_mustakim/his-integration-backend-services/his-ebt/auto-send-email-pum-outstanding.debug.log
+Done. processed=1 sent=0 skipped=0 failed=1
