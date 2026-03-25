@@ -427,7 +427,7 @@ def main():
                 "email": recipient_emails,
                 "body": {
                     "pic_name": pic_name,
-                    "doc_no": doc_no,
+                    "adv_mon_id": doc_no,
                     "doc_desc": towards,
                     "business_trip_type": trip_name,
                     "business_trip_destination": destination,
