@@ -15,6 +15,14 @@ except Exception:
     MySQLdb = None
 
 try:
+    import mysql.connector
+except Exception:
+    mysql = None
+    mysql_connector = None
+else:
+    mysql_connector = mysql.connector
+
+try:
     import urllib2
 except Exception:
     urllib2 = None
@@ -101,7 +109,16 @@ def _connect_mysql(host, port, database, user, password):
             charset="utf8",
         )
 
-    raise RuntimeError("Missing MySQL driver. Install pymysql (recommended) or MySQLdb.")
+    if mysql_connector is not None:
+        return mysql_connector.connect(
+            host=host,
+            user=user,
+            password=password,
+            database=database,
+            port=port,
+        )
+
+    raise RuntimeError("Missing MySQL driver. Install pymysql (recommended), mysql-connector-python, or MySQLdb.")
 
 
 def _ensure_app_url_base(app_url):
