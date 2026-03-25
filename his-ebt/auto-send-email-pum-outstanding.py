@@ -544,7 +544,14 @@ def main():
             except Exception:
                 trigger_day = 0
 
-            log_exists_sql = "SELECT 1 FROM fin_trs_pum_outstanding_email_log WHERE adv_mon_id = %s AND trigger_day = %s LIMIT 1"
+            log_exists_sql = """
+                SELECT 1
+                FROM fin_trs_pum_outstanding_email_log
+                WHERE adv_mon_id = %s
+                  AND trigger_day = %s
+                  AND status = 'SUCCESS'
+                LIMIT 1
+            """
             cursor.execute(log_exists_sql, (adv_mon_id, trigger_day))
             if cursor.fetchone():
                 skipped += 1
@@ -678,6 +685,14 @@ def main():
                         (adv_mon_id, trigger_day, arrival_date, days_diff, recipients, payload_json, http_status, response_body, status, error_message, created_at)
                     VALUES
                         (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
+                    ON DUPLICATE KEY UPDATE
+                        recipients = VALUES(recipients),
+                        payload_json = VALUES(payload_json),
+                        http_status = VALUES(http_status),
+                        response_body = VALUES(response_body),
+                        status = VALUES(status),
+                        error_message = VALUES(error_message),
+                        created_at = VALUES(created_at)
                 """
                 cursor.execute(
                     insert_log_sql,
@@ -718,6 +733,14 @@ def main():
                     (adv_mon_id, trigger_day, arrival_date, days_diff, recipients, payload_json, http_status, response_body, status, error_message, created_at)
                 VALUES
                     (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
+                ON DUPLICATE KEY UPDATE
+                    recipients = VALUES(recipients),
+                    payload_json = VALUES(payload_json),
+                    http_status = VALUES(http_status),
+                    response_body = VALUES(response_body),
+                    status = VALUES(status),
+                    error_message = VALUES(error_message),
+                    created_at = VALUES(created_at)
             """
             cursor.execute(
                 insert_log_sql,
