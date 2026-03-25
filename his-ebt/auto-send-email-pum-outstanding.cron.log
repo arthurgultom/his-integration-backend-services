@@ -1,3 +1,8 @@
 Done. processed=1 sent=1 skipped=0 failed=0
 DEBUG mode enabled. Payloads were written to: /home/ms_sahrul_mustakim/his-integration-backend-services/his-ebt/auto-send-email-pum-outstanding.debug.log
 Done. processed=1 sent=0 skipped=0 failed=1
+Done. processed=1 sent=0 skipped=1 failed=0
+Done. processed=1 sent=0 skipped=1 failed=0
+/usr/local/lib/python3.6/site-packages/urllib3/connectionpool.py:1063: InsecureRequestWarning: Unverified HTTPS request is being made to host 'his-be-notification.hino.co.id'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,
+Done. processed=1 sent=1 skipped=0 failed=0
