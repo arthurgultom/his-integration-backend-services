@@ -295,6 +295,109 @@ def main():
         conn = _connect_mysql(host, port, database, user, password)
         cursor = conn.cursor()
 
+        status1_sql = """
+            SELECT
+                am.adv_mon_id,
+                am.sppd_id
+            FROM fin_trs_advance_money am
+            JOIN ebt_trs_sppd s ON s.sppd_id = am.sppd_id
+            WHERE am.status = 1
+              AND s.arrival_date IS NOT NULL
+              AND CURDATE() >= s.arrival_date
+        """
+        cursor.execute(status1_sql)
+        rows_status1 = cursor.fetchall()
+        for r1 in rows_status1:
+            adv_mon_id_status1 = r1[0]
+            sppd_id_status1 = r1[1]
+            remark_message = "The application cannot be processed. Please submit a reimbursement request via HRIS website"
+            isi_pesan = "Auto Rejected - " + remark_message
+            tanggal_kirim = datetime.now().isoformat()
+
+            approver_id = None
+            approver_name = ""
+            try:
+                cursor.execute(
+                    """
+                    SELECT a.approver_id, u.full_name
+                    FROM fin_trs_approval a
+                    JOIN hgs_mst_user u ON u.user_id = a.approver_id
+                    WHERE a.doc_no = %s
+                    ORDER BY a.order_approval ASC
+                    LIMIT 1
+                    """,
+                    (adv_mon_id_status1,),
+                )
+                r = cursor.fetchone()
+                if r:
+                    approver_id = r[0]
+                    approver_name = r[1] or ""
+            except Exception:
+                pass
+
+            nama_user = "({}) {}".format("" if approver_id is None else str(approver_id), approver_name)
+
+            if debug_mode:
+                _append_jsonl(
+                    debug_log_path,
+                    {
+                        "ts": datetime.now().isoformat(),
+                        "event": "AUTO_REJECT_SIMULATION",
+                        "adv_mon_id": adv_mon_id_status1,
+                        "sppd_id": sppd_id_status1,
+                        "remark_message": remark_message,
+                        "isi_pesan": isi_pesan,
+                        "approver_id": approver_id,
+                        "approver_name": approver_name,
+                        "nama_user": nama_user,
+                    },
+                )
+            else:
+                try:
+                    cursor.execute(
+                        """
+                        INSERT INTO fin_trs_advance_money_response (adv_mon_id, tanggal_kirim, nama_user, isi_pesan)
+                        VALUES (%s, %s, %s, %s)
+                        """,
+                        (adv_mon_id_status1, tanggal_kirim, nama_user, isi_pesan),
+                    )
+                except Exception:
+                    pass
+
+                if approver_id is not None:
+                    try:
+                        cursor.execute(
+                            """
+                            UPDATE fin_trs_approval
+                            SET approver_flag = '3', approver_date = %s
+                            WHERE doc_no = %s AND approver_id = %s
+                            """,
+                            (tanggal_kirim, adv_mon_id_status1, approver_id),
+                        )
+                    except Exception:
+                        pass
+
+                try:
+                    cursor.execute(
+                        "UPDATE ebt_trs_sppd SET advance_money = '0' WHERE sppd_id = %s",
+                        (sppd_id_status1,),
+                    )
+                except Exception:
+                    pass
+
+                try:
+                    cursor.execute(
+                        "UPDATE fin_trs_advance_money SET status = '3', sppd_id = '' WHERE adv_mon_id = %s",
+                        (adv_mon_id_status1,),
+                    )
+                except Exception:
+                    pass
+
+                try:
+                    conn.commit()
+                except Exception:
+                    pass
+
         candidates_sql = """
             SELECT
                 am.adv_mon_id,
