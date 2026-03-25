@@ -32,6 +32,17 @@ try:
 except Exception:
     ssl = None
 
+try:
+    import requests
+except Exception:
+    requests = None
+
+try:
+    from urllib import request as urllib_request
+    from urllib import error as urllib_error
+except Exception:
+    urllib_request = None
+    urllib_error = None
 
 def _clean_env_value(value):
     if value is None:
@@ -131,29 +142,72 @@ def _ensure_app_url_base(app_url):
 
 
 def _http_post_json(url, payload, timeout_sec):
-    if urllib2 is None:
-        raise RuntimeError("urllib2 is not available")
-
-    data = json.dumps(payload)
+    headers = {"Accept": "application/json", "Content-Type": "application/json"}
+    data_str = json.dumps(payload)
+    data_bytes = None
     try:
-        data = data.encode("utf-8")
+        data_bytes = data_str.encode("utf-8")
     except Exception:
-        pass
+        data_bytes = data_str
 
-    headers = {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-    }
+    if requests is not None:
+        try:
+            resp = requests.post(url, data=data_bytes, headers=headers, timeout=timeout_sec, verify=False)
+            return int(resp.status_code), resp.text
+        except Exception as e:
+            return 0, str(e)
 
-    req = urllib2.Request(url, data, headers)
+    if urllib_request is None:
+        if urllib2 is None:
+            raise RuntimeError("No HTTP client available")
 
+    if urllib_request is not None:
+        req = urllib_request.Request(url, data=data_bytes, headers=headers)
+        ctx = None
+        if ssl is not None and hasattr(ssl, "_create_unverified_context"):
+            try:
+                ctx = ssl._create_unverified_context()
+            except Exception:
+                ctx = None
+        try:
+            if ctx is not None:
+                try:
+                    resp = urllib_request.urlopen(req, timeout=timeout_sec, context=ctx)
+                except TypeError:
+                    resp = urllib_request.urlopen(req, timeout=timeout_sec)
+            else:
+                resp = urllib_request.urlopen(req, timeout=timeout_sec)
+            code = getattr(resp, "getcode", lambda: 200)()
+            body = resp.read()
+            try:
+                resp.close()
+            except Exception:
+                pass
+            try:
+                body_text = body.decode("utf-8")
+            except Exception:
+                body_text = body
+            return int(code), body_text
+        except Exception as e:
+            if urllib_error is not None and isinstance(e, urllib_error.HTTPError):
+                try:
+                    body = e.read()
+                except Exception:
+                    body = ""
+                try:
+                    body_text = body.decode("utf-8")
+                except Exception:
+                    body_text = body
+                return int(getattr(e, "code", 0) or 0), body_text
+            return 0, str(e)
+
+    req = urllib2.Request(url, data_bytes, headers)
     ctx = None
     if ssl is not None and hasattr(ssl, "_create_unverified_context"):
         try:
             ctx = ssl._create_unverified_context()
         except Exception:
             ctx = None
-
     try:
         if ctx is not None:
             try:
@@ -168,13 +222,21 @@ def _http_post_json(url, payload, timeout_sec):
             resp.close()
         except Exception:
             pass
-        return int(code), body
-    except urllib2.HTTPError as e:
+        try:
+            body_text = body.decode("utf-8")
+        except Exception:
+            body_text = body
+        return int(code), body_text
+    except Exception as e:
         try:
             body = e.read()
         except Exception:
             body = ""
-        return int(getattr(e, "code", 0) or 0), body
+        try:
+            body_text = body.decode("utf-8")
+        except Exception:
+            body_text = body
+        return 0, body_text
 
 
 def _split_emails(value):
@@ -257,6 +319,7 @@ def main():
 
     debug_mode = ("--debug" in sys.argv) or _is_truthy(_get_env_first(["DEBUG", "DRY_RUN"], "0"))
     debug_log_path = _get_env_first(["DEBUG_LOG_PATH"], "")
+    debug_log_to_db = _is_truthy(_get_env_first(["DEBUG_LOG_TO_DB", "DRY_RUN_INSERT_LOG"], "0"))
     if debug_mode and not debug_log_path:
         base_dir = os.path.dirname(os.path.abspath(__file__))
         debug_log_path = os.path.join(base_dir, "auto-send-email-pum-outstanding.debug.log")
@@ -572,6 +635,35 @@ def main():
                         "payload": payload,
                     },
                 )
+                if debug_log_to_db:
+                    try:
+                        insert_log_sql = """
+                            INSERT INTO fin_trs_pum_outstanding_email_log
+                                (adv_mon_id, trigger_day, arrival_date, days_diff, recipients, payload_json, http_status, response_body, status, error_message, created_at)
+                            VALUES
+                                (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
+                        """
+                        cursor.execute(
+                            insert_log_sql,
+                            (
+                                adv_mon_id,
+                                trigger_day,
+                                arrival_date,
+                                days_diff,
+                                ",".join(recipient_emails),
+                                json.dumps(payload),
+                                0,
+                                "",
+                                "DEBUG",
+                                "Debug mode - email not sent",
+                            ),
+                        )
+                        conn.commit()
+                    except Exception:
+                        try:
+                            conn.rollback()
+                        except Exception:
+                            pass
                 if not recipient_emails:
                     failed += 1
                 else:
