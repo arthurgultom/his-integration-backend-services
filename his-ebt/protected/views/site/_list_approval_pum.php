@@ -150,7 +150,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
         array(
             'header' => 'PUM Amount',
             'name' => 'amount',
-            'value' => '$data->currency_id." ".number_format($data->amount, 0, ",", ".")',
+            'value' => '$data->currency_id." ".number_format($data->grand_total, 0, ",", ".")',
             'htmlOptions' => array('width' => '10%', 'style'=>'text-align:right'),
         ),
         array(
