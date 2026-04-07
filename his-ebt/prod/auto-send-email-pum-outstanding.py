@@ -516,6 +516,13 @@ def main():
                         FROM fin_trs_pum_outstanding_email_log l
                         WHERE l.adv_mon_id = am.adv_mon_id
                     )
+                    OR EXISTS (
+                        SELECT 1
+                        FROM fin_trs_pum_outstanding_email_log l2
+                        WHERE l2.adv_mon_id = am.adv_mon_id
+                          AND l2.trigger_day = DATEDIFF(CURDATE(), s.arrival_date)
+                          AND l2.status = 'FAILED'
+                    )
                   )
         """
 
@@ -566,6 +573,7 @@ def main():
                 FROM fin_trs_pum_outstanding_email_log
                 WHERE adv_mon_id = %s
                   AND trigger_day = %s
+                  AND status = 'SUCCESS'
                 LIMIT 1
             """
             cursor.execute(log_exists_sql, (adv_mon_id, trigger_day))
