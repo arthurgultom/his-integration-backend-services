@@ -500,7 +500,14 @@ def main():
               AND am.paid_status = 0
               AND s.arrival_date IS NOT NULL
               AND DATEDIFF(CURDATE(), s.arrival_date) >= 10
-              AND MOD(DATEDIFF(CURDATE(), s.arrival_date) - 10, 5) = 0
+              AND (
+                    MOD(DATEDIFF(CURDATE(), s.arrival_date) - 10, 5) = 0
+                    OR NOT EXISTS (
+                        SELECT 1
+                        FROM fin_trs_pum_outstanding_email_log l
+                        WHERE l.adv_mon_id = am.adv_mon_id
+                    )
+                  )
         """
 
         cursor.execute(candidates_sql)
@@ -550,7 +557,6 @@ def main():
                 FROM fin_trs_pum_outstanding_email_log
                 WHERE adv_mon_id = %s
                   AND trigger_day = %s
-                  AND status = 'SUCCESS'
                 LIMIT 1
             """
             cursor.execute(log_exists_sql, (adv_mon_id, trigger_day))
