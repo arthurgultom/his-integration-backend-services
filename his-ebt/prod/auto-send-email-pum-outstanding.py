@@ -793,9 +793,10 @@ def main():
 
             time.sleep(0.2)
 
-        print("Done. processed={} sent={} skipped={} failed={}".format(processed, sent, skipped, failed))
+        ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        print("[{}] Done. processed={} sent={} skipped={} failed={}".format(ts, processed, sent, skipped, failed))
         if debug_mode:
-            print("DEBUG mode enabled. Payloads were written to: {}".format(debug_log_path))
+            print("[{}] DEBUG mode enabled. Payloads were written to: {}".format(ts, debug_log_path))
         return 0
 
     except Exception as e:
