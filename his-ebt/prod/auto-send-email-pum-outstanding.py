@@ -36,6 +36,15 @@ try:
     import requests
 except Exception:
     requests = None
+else:
+    try:
+        import urllib3
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+    except Exception:
+        try:
+            requests.packages.urllib3.disable_warnings()
+        except Exception:
+            pass
 
 try:
     from urllib import request as urllib_request
